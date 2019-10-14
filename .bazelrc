@@ -1,0 +1,5 @@
+build:buildroot-toolchain --crosstool_top=@bazel_buildroot_toolchain//toolchain:buildroot
+build:buildroot-toolchain --host_crosstool_top=@bazel_buildroot_toolchain//toolchain:buildroot
+build:buildroot-toolchain --cpu=x86_64
+
+build --config buildroot-toolchain

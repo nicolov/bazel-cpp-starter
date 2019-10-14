@@ -1,0 +1,13 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: nicolov/bazel-cpp-starter:0.0.1
+        steps:
+            - checkout
+            - run:
+                - bazel build //...
+                - ./bazel-bin/src/hello
+                - cp ./bazel-bin/src/hello /tmp/artifacts
+            - store_artifacts:
+                path: /tmp/artifacts
